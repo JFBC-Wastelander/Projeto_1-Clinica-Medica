@@ -1,5 +1,6 @@
 const consulta = [];
 let variavel = "menu";
+let deletar
 let input;
 let usuario = {
   nome: "",
@@ -30,7 +31,7 @@ process.stdin.on("data", function (data) {
       console.log("Qual consulta deseja alterar?");
     } else if (input === "4") {
       variavel === "cancelarConsulta";
-      console.log("Qual consulta deseja cancelar?");
+      console.log("Informe o nome da pessoa da consulta a ser cancelada");
     } else if (input === "5") {
       console.log("Saindo...");
       process.exit();
@@ -67,6 +68,12 @@ process.stdin.on("data", function (data) {
       "1. Adicionar uma consulta\n2. Ver consultas.\n3. Atualizar uma consulta.\n4. Cancelar uma consulta.\n5. Encerrar"
     );
   } else if (variavel === "cancelarConsulta") {
-    console.log("");
+    deletar = input
+    console.log(consulta)
+    for (let i = 0; i < consulta.length; i++) {
+        if (consulta[i].nome.toLowerCase() === deletar.toLowerCase()) {
+            consulta.splice(i,1)
+        }
+    }
   }
 });

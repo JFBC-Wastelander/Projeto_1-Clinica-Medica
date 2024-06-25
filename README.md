@@ -1,2 +1,2 @@
-# Projeto_1-Clinica-Medica
+# Projeto 1: Clínica Médica
 Baymax em Java Script

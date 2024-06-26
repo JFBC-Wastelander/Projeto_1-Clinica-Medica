@@ -1,6 +1,7 @@
 const consulta = [];
 let variavel = "menu";
 let deletar;
+let atualizar;
 let input;
 let usuario = {
   nome: "",
@@ -38,7 +39,7 @@ Bem-vindo a clínica médica. Selecione uma opção:
       variavel = "menu";
     } else if (input === "3") {
       variavel = "atualizarConsulta";
-      console.log("Qual consulta deseja alterar?");
+      console.log('Pressione "Enter" para prosseguir');
     } else if (input === "4") {
       variavel = "cancelarConsulta";
       console.log('Pressione "Enter" para prosseguir');
@@ -94,6 +95,23 @@ Bem-vindo a clínica médica. Selecione uma opção:
           "1. Adicionar uma consulta\n2. Ver consultas.\n3. Atualizar uma consulta.\n4. Cancelar uma consulta.\n5. Encerrar"
         );
         variavel = "menu";
+      }
+    }
+  } else if (variavel === "atualizarConsulta") {
+    atualizar = input
+    console.log("Qual atributo você deseja alterar?")
+    console.log(consulta)
+    for (let i = 0; i < consulta.length; i++) {
+      if (atualizar === "nome"){
+
+      } else if (atualizar === "idade") {
+
+      } else if (atualizar === "sintoma") {
+
+      } else if (atualizar === "dia") {
+
+      } else if (atualizar === "hora") {
+        
       }
     }
   }

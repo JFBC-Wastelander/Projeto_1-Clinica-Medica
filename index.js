@@ -10,14 +10,15 @@ let usuario = {
   dia: "",
   hora: "",
 };
-
+function opcao (){
 console.log(`Bem-vindo a clínica médica. Selecione uma opção:
 1. Adicionar uma consulta
 2. Ver consultas.
 3. Atualizar uma consulta.
 4. Cancelar uma consulta
 5. Encerrar`);
-
+}
+opcao()
 process.stdin.on("data", function (data) {
   input = data.toString().trim();
 
@@ -29,13 +30,8 @@ process.stdin.on("data", function (data) {
       variavel = "verConsulta";
       console.log(`Mostrando consultas agendadas...`);
       console.log(consulta);
-      console.log(`Redirecionando para o menu...\n
-Bem-vindo a clínica médica. Selecione uma opção:
-1. Adicionar uma consulta.
-2. Ver consultas.
-3. Atualizar uma consulta.
-4. Cancelar uma consulta.
-5. Encerrar atividades.`);
+      console.log(`Redirecionando para o menu...\n`)
+opcao()
       variavel = "menu";
     } else if (input === "3") {
       variavel = "atualizarConsulta";
@@ -74,12 +70,8 @@ Bem-vindo a clínica médica. Selecione uma opção:
       dia: "",
       hora: "",
     };
-    console.log(`Consulta cadastrada. Selecione uma opção:
-1. Adicionar uma nova consulta.
-2. Ver consultas.
-3. Atualizar uma consulta.
-4. Cancelar uma consulta.
-5. Encerrar atividades.`);
+    console.log(`Consulta cadastrada. Selecione uma opção:`);
+    opcao()
   } else if (variavel === "cancelarConsulta") {
     deletar = input;
     console.log("Informe o nome do paciente para cancelar a consulta.");
@@ -90,10 +82,7 @@ Bem-vindo a clínica médica. Selecione uma opção:
         console.log(
           "Consulta cancelada com sucesso!\nRedirecionando para o menu...\n"
         );
-        console.log("Bem-vindo a clínica médica. Selecione uma opção:");
-        console.log(
-          "1. Adicionar uma consulta\n2. Ver consultas.\n3. Atualizar uma consulta.\n4. Cancelar uma consulta.\n5. Encerrar"
-        );
+opcao()
         variavel = "menu";
       }
     }
